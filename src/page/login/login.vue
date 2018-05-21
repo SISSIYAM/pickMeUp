@@ -1,40 +1,40 @@
 <template>
-  <div class="loginContainer">
-    <!--<head-top :head-title="loginWay?'登录':'密码登录'">-->
-    <!--</head-top>-->
-    <section class="head_goBack" @click="$router.go(-1)">
-      //icon or img or somethings else to click
-      <img class="goBackIcon" src="../../src/images/icon_back.png"/>
-    </section>
-    <!-- Form 1 if the user use account number and pwd login-->
-    <form class="loginForm" v-if="loginWay">
-      <section class="input_container phone_number">
-        <input type="text" placeholder="请输入手机号" name="phone" maxlength="11" v-model="phoneNumber">
-        <button @click.prevent="getAuthenticationCode" :class="{right_phone_number:rightPhoneNumber}" v-show="!computedTime">获取验证码</button>
-        <button @click.prevent v-show="computedTime">已发送({{computedTime}}s)</button>
-      </section>
-      <section class="input_container">
-        <input type="text" placeholder="请输入验证码" name="verifyCode" maxlength="6" v-model="verifyCode">
-      </section>
-    </form>
+  <!--<div class="loginContainer">-->
+    <!--&lt;!&ndash;<head-top :head-title="loginWay?'登录':'密码登录'">&ndash;&gt;-->
+    <!--&lt;!&ndash;</head-top>&ndash;&gt;-->
+    <!--<section class="head_goBack" @click="$router.go(-1)">-->
+      <!--//icon or img or somethings else to click-->
+      <!--<img class="goBackIcon" src="../../src/images/icon_back.png"/>-->
+    <!--</section>-->
+    <!--&lt;!&ndash; Form 1 if the user use account number and pwd login&ndash;&gt;-->
+    <!--<form class="loginForm" v-if="loginWay">-->
+      <!--<section class="input_container phone_number">-->
+        <!--<input type="text" placeholder="请输入手机号" name="phone" maxlength="11" v-model="phoneNumber">-->
+        <!--<button @click.prevent="getAuthenticationCode" :class="{right_phone_number:rightPhoneNumber}" v-show="!computedTime">获取验证码</button>-->
+        <!--<button @click.prevent v-show="computedTime">已发送({{computedTime}}s)</button>-->
+      <!--</section>-->
+      <!--<section class="input_container">-->
+        <!--<input type="text" placeholder="请输入验证码" name="verifyCode" maxlength="6" v-model="verifyCode">-->
+      <!--</section>-->
+    <!--</form>-->
 
-    <!-- Form 2 if the user use -->
-    <form class="loginForm" v-else>
-      <section class="input_container">
-        <input type="text" placeholder="账号" v-model.lazy="accountName">
-      </section>
-      <section class="input_container">
-        <input v-if="!showPassword" type="password" placeholder="密码" v-model="password">
-        <input type="text" placeholder="密码" v-model="password">
-        <div class="switch_bar" :class="{show_up:showUp}" >
+    <!--&lt;!&ndash; Form 2 if the user use &ndash;&gt;-->
+    <!--<form class="loginForm" v-else>-->
+      <!--<section class="input_container">-->
+        <!--<input type="text" placeholder="账号" v-model.lazy="accountName">-->
+      <!--</section>-->
+      <!--<section class="input_container">-->
+        <!--<input v-if="!showPassword" type="password" placeholder="密码" v-model="password">-->
+        <!--<input type="text" placeholder="密码" v-model="password">-->
+        <!--<div class="switch_bar" :class="{show_up:showUp}" >-->
 
-        </div>
-      </section>
-    </form>
-    <div class="login_container" @click="login">登录</div>
-    <!--TODO if fail to login-->
-    <alter-tip v-if="showAlert" :showHide="showAlert" @closeTip="closeTip" :alertMessage="alertMessage"></alter-tip>
-  </div>
+        <!--</div>-->
+      <!--</section>-->
+    <!--</form>-->
+    <!--<div class="login_container" @click="login">登录</div>-->
+    <!--&lt;!&ndash;TODO if fail to login&ndash;&gt;-->
+    <!--<alter-tip v-if="showAlert" :showHide="showAlert" @closeTip="closeTip" :alertMessage="alertMessage"></alter-tip>-->
+  <!--</div>-->
 </template>
 
 <script>
