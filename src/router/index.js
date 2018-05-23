@@ -1,19 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Login from '@/page/login/login'
-
+import welcome from '@/page/welcome/welcome'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Login',
-      component: Login
-    },
-    {
-
+      name: 'welcome',
+      component: welcome
     }
   ]
 })
