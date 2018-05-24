@@ -24,20 +24,7 @@
 </template>
 <script>
 export default {
-  name: 'welcome',
-  data () {
-    return {
-      newCustomer: true
-    }
-  },
-  methods: {
-    // wechatHandleClick(thirdpart){
-    //
-    // },
-    // qqHandleClick(thirdpart){
-    //
-    // }
-  }
+  name: 'welcome'
 }
 </script>
 <style lang="scss" scoped>
@@ -48,7 +35,7 @@ export default {
       cursor: pointer;
     }
     .icon {
-      color: #fff;
+      color: #56c742;
       font-size: 30px;
       margin-top: 6px;
     }

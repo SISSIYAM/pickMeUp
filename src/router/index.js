@@ -2,9 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import welcome from '@/page/welcome/welcome'
-import svgIcon from '@/components/svgIcon/svgIcon'
+import svgIcon from '@/images/index'
+
 Vue.use(Router)
-Vue.component('svg-icon', svgIcon)
+Vue.use(svgIcon)
 
 export default new Router({
   routes: [

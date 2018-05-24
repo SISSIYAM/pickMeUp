@@ -5,6 +5,8 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 
+import './images'
+
 Vue.use(Vuex)
 Vue.config.productionTip = false
 
